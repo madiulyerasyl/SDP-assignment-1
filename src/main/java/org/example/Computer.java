@@ -89,6 +89,8 @@ public class Computer {
         private double price = 0.0;
         private Dimensions dimensions = null;
 
+        private static final int MIN_GAMING_RAM = 16;
+
         public Builder(String cpu, int ram, int storage, String operatingSystem) {
             this.cpu = cpu;
             this.ram = ram;
@@ -133,20 +135,38 @@ public class Computer {
         }
 
         private void validate() {
+            validateRam();
+            validateStorage();
+            validatePrice();
+            validateGamingConfiguration();
+        }
 
+        private void validateRam() {
             if (ram <= 0) {
-                throw new IllegalArgumentException("RAM must be greater than 0");
+                throw new IllegalArgumentException(
+                        "RAM must be greater than 0"
+                );
             }
+        }
 
+        private void validateStorage() {
             if (storage <= 0) {
-                throw new IllegalArgumentException("Storage must be greater than 0");
+                throw new IllegalArgumentException(
+                        "Storage must be greater than 0"
+                );
             }
+        }
 
+        private void validatePrice() {
             if (price < 0) {
-                throw new IllegalArgumentException("Price cannot be negative");
+                throw new IllegalArgumentException(
+                        "Price cannot be negative"
+                );
             }
+        }
 
-            if (gamingMode && ram < 16) {
+        private void validateGamingConfiguration() {
+            if (gamingMode && ram < MIN_GAMING_RAM) {
                 throw new IllegalStateException(
                         "Gaming mode requires at least 16 GB RAM"
                 );
