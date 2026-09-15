@@ -1,6 +1,7 @@
 package org.example;
 
 public class Dimensions {
+
     private double width;
     private double height;
     private double depth;
@@ -13,6 +14,6 @@ public class Dimensions {
 
     @Override
     public String toString() {
-        return width + " x " + height + " x " + depth;
+        return width + " x " + height + " x " + depth + " cm";
     }
 }

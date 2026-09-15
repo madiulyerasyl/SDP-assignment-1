@@ -13,6 +13,7 @@ public class Computer {
     private boolean bluetooth;
     private boolean gamingMode;
     private double price;
+    private Dimensions dimensions;
 
     public Computer(
             String cpu,
@@ -24,7 +25,8 @@ public class Computer {
             boolean wifi,
             boolean bluetooth,
             boolean gamingMode,
-            double price
+            double price,
+            Dimensions dimensions
     ) {
         this.cpu = cpu;
         this.ram = ram;
@@ -36,6 +38,7 @@ public class Computer {
         this.bluetooth = bluetooth;
         this.gamingMode = gamingMode;
         this.price = price;
+        this.dimensions = dimensions;
     }
 
     @Override
@@ -51,6 +54,7 @@ public class Computer {
                 ", bluetooth=" + bluetooth +
                 ", gamingMode=" + gamingMode +
                 ", price=" + price +
+                ", dimensions=" + dimensions +
                 '}';
     }
 }
