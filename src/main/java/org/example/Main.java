@@ -4,26 +4,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Dimensions dimensions = new Dimensions(
-                45.0,
-                40.0,
-                20.0
-        );
+        ComputerDirector director = new ComputerDirector();
 
-        Computer computer = new Computer.Builder(
-                "Intel Core i5",
-                16,
-                512,
-                "Windows 11"
-        )
-                .withGraphicsCard("RTX 4060")
-                .enableWiFi()
-                .enableBluetooth()
-                .enableGamingMode()
-                .withPrice(1200.0)
-                .withDimensions(dimensions)
-                .build();
+        Computer basic = director.createBasicComputer();
+        Computer office = director.createOfficeComputer();
+        Computer gaming = director.createGamingComputer();
 
-        System.out.println(computer);
+        System.out.println("BASIC:");
+        System.out.println(basic);
+
+        System.out.println("\nOFFICE:");
+        System.out.println(office);
+
+        System.out.println("\nGAMING:");
+        System.out.println(gaming);
     }
 }
