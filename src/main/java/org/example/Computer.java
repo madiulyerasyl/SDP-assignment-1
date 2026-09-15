@@ -84,7 +84,35 @@ public class Computer {
         }
 
         public Computer build() {
+            validate();
             return new Computer(this);
+        }
+
+        private void validate() {
+
+            if (ram <= 0) {
+                throw new IllegalArgumentException("RAM must be greater than 0");
+            }
+
+            if (storage <= 0) {
+                throw new IllegalArgumentException("Storage must be greater than 0");
+            }
+
+            if (price < 0) {
+                throw new IllegalArgumentException("Price cannot be negative");
+            }
+
+            if (gamingMode && ram < 16) {
+                throw new IllegalStateException(
+                        "Gaming mode requires at least 16 GB RAM"
+                );
+            }
+
+            if (gamingMode && !dedicatedGraphics) {
+                throw new IllegalStateException(
+                        "Gaming mode requires a dedicated graphics card"
+                );
+            }
         }
     }
 
