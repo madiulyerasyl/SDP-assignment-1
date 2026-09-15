@@ -30,6 +30,50 @@ public class Computer {
         this.dimensions = builder.dimensions;
     }
 
+    public String getCpu() {
+        return cpu;
+    }
+
+    public int getRam() {
+        return ram;
+    }
+
+    public int getStorage() {
+        return storage;
+    }
+
+    public String getOperatingSystem() {
+        return operatingSystem;
+    }
+
+    public boolean hasDedicatedGraphics() {
+        return dedicatedGraphics;
+    }
+
+    public String getGpu() {
+        return gpu;
+    }
+
+    public boolean hasWiFi() {
+        return wifi;
+    }
+
+    public boolean hasBluetooth() {
+        return bluetooth;
+    }
+
+    public boolean isGamingMode() {
+        return gamingMode;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public Dimensions getDimensions() {
+        return dimensions;
+    }
+
     public static class Builder {
 
         private String cpu;
