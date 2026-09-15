@@ -10,19 +10,19 @@ public class Main {
                 20.0
         );
 
-        Computer computer = new Computer(
+        Computer computer = new Computer.Builder(
                 "Intel Core i5",
                 16,
                 512,
-                "Windows 11",
-                true,
-                "RTX 4060",
-                true,
-                true,
-                true,
-                1200.0,
-                dimensions
-        );
+                "Windows 11"
+        )
+                .withGraphicsCard("RTX 4060")
+                .enableWiFi()
+                .enableBluetooth()
+                .enableGamingMode()
+                .withPrice(1200.0)
+                .withDimensions(dimensions)
+                .build();
 
         System.out.println(computer);
     }
