@@ -38,6 +38,7 @@ public class ComputerDirector {
                 .enableBluetooth()
                 .enableGamingMode()
                 .withPrice(1800.0)
+                .withDimensions(new Dimensions(45.0, 20.0, 40.0))
                 .build();
     }
 }
